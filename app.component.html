@@ -1,0 +1,33 @@
+<div class="control-section" style="padding:10px;position:relative;">
+  <div
+    id="modalTarget"
+    #targetModal
+    class="col-md-8 control-section"
+    style="height:350px;"
+  >
+    <ejs-dropdownlist
+      [value]="initialValue"
+      [dataSource]="data"
+      [fields]="fields"
+      (select)="onSelect($event)"
+    ></ejs-dropdownlist>
+    <br />
+    <!-- Render Button to open the modal Dialog -->
+    <button ejs-button id="modalbtn" #modalButton (click)="modalBtnClick()">
+      Open Dialog
+    </button>
+    <!-- Render modal Dialog -->
+    <ejs-dialog
+      id="modalDialog"
+      #modalDialog
+      [isModal]="isModal"
+      [header]="header"
+      [target]="target"
+      [width]="width"
+      [buttons]="buttons"
+      [visible]="false"
+      [content]="content"
+    >
+    </ejs-dialog>
+  </div>
+</div>
